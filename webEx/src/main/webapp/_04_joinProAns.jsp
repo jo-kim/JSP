@@ -7,6 +7,13 @@
 <title>Insert title here</title>
 </head>
 <body>
-
+	<%
+	// 사용자에게는 보이지 않는 페이지 (데이터처리)
+	String id = request.getParameter("id");
+	String pw = request.getParameter("pw");
+	
+	%>
+	<h1>id:<%=id %> </h1>
+	<h1>pw:<%=pw %> </h1>
 </body>
 </html>

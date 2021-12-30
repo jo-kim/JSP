@@ -1,3 +1,4 @@
+<%@page import="java.util.Random"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <!DOCTYPE html>
@@ -7,66 +8,86 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <style>
-@import
-	url('https://fonts.googleapis.com/css2?family=Roboto:wght@500&display=swap')
-	;
-
-h1 {
-	text-align: center;
-	font-weight: bold;
-	font-size: 4em;
-	font-family: "Roboto";
-}
-
-a {
-	text-decoration-line: none;
-	color: rgb(10, 187, 10);
-}
-form{
-	text-align:center;	
-}
-
- input[type="button"]{
-        	width:300px;
-        	height: 50px;
-        	margin:auto;
-        	font-size:1em;
-        	border:0;
-  			color:white;
-  			background-color: rgb(10, 187, 10);
+		  @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@500&display=swap');
+        *{
+            margin: 0;
+            padding: 0;
+           
         }
-
-
-
-button{
-	width:100px;
-	height: 50px;
-	background-color: rgb(10, 187, 10);
-	color: white;
-}
-</style>
+		body{
+			margin-top: 5%;
+			text-align: center;
+		}
+	
+        div{
+            position: relative;
+			margin-top: 3%;
+			
+        }
+		
+        h1{
+            color:  rgb(10, 187, 10);
+			font-weight: bold;
+            font-family: "Roboto";
+            font-size: 4em;
+			
+        }
+        
+        a{
+			text-decoration-line: none;
+		}
+		
+        h4{
+            position: absolute;
+            margin-left: 40%;
+        }
+        
+		input[type="button"]{
+			color: white;
+			background-color:rgb(10, 187, 10); 
+			border: none;
+			cursor: pointer;
+		}
+        span{
+        	color:red;
+        	
+        }
+        #id::-webkit-input-placeholder{
+		   margin-right: 3%;
+		   text-align: right;
+		   font-size: 1.5em;
+	   }
+        
+     
+    </style>
 <script type="text/javascript" src="_02_validation.js"></script>
 <title>join</title>
 </head>
 <body>
-	<h1>
-		<a href="www.naver.com">NAVER</a>
-	</h1>
-	<form action="_04_joinPro.jsp">
-		<p>
-			아이디<br> <input type="email" placeholder="@naver.com" style="width: 300px; height: 50px;" name="required"><br>
-		</p>
-		<p>
-			비밀번호<br> <input type="password"style="width: 300px; height: 50px;" name="required">
-		</p>
-		<p>
-			비밀번호 재확인<br> <input type="password"style="width: 300px; height: 50px;" name="required">
-		</p>
-		<p>
-			이름<br> <input type="text" style="width: 300px; height: 50px;" name="required">
-		</p>
-		<p  >
-			생년월일<br> <input type="text" placeholder="년(4자)" style="width: 90px; height: 50px;" name="required" > <select style="width: 100px; height: 50px;" name="required">
+		<a href="http://www.naver.com"><h1>NAVER</h1></a>
+	<form method="post" action="_04_joinPro.jsp">
+    <div>
+		<h4>아이디</h4><br> 
+        <input id ="id" type="text" placeholder="@naver.com"
+				style="width: 300px; height: 50px;" name="id" required><br>
+        <span id="check1"></span><br>
+		
+		<h4>비밀번호</h4><br> <input type="password"
+				style="width: 300px; height: 50px;" name="pw" required><br>
+				<span id="check2"></span><br>
+				
+		<h4>비밀번호 재확인</h4><br> <input type="password"
+				style="width: 300px; height: 50px;" name="pw_confirm" required><br>
+				<span id="check3"></span><br>
+		
+		<h4>이름</h4><br> <input type="text" style="width: 300px; height: 50px;"
+				name="name" required><br>
+				<span id="check4"></span><br>
+				
+		<h4>생년월일</h4><br> 
+        <input type="text" placeholder="년(4자)"
+				style="width: 90px; height: 50px;" name="year" id="year" required> <select
+				style="width: 100px; height: 50px;" name="month" id="month" required>
 				<option>월</option>
 				<option value="1">1</option>
 				<option value="2">2</option>
@@ -80,21 +101,27 @@ button{
 				<option value="10">10</option>
 				<option value="11">11</option>
 				<option value="12">12</option>
-			</select> <input type="text" placeholder="일" style="width: 90px; height: 50px;" name="required">
-		</p>
-		<p>
-			성별<br> <select style="width: 300px; height: 50px;" name="required">
-				<option>성별</option>
-				<option value="남자">남자</option>
-				<option value="여자">여자</option>
-				<option value="선택안함">선택안함</option>
-			</select>
-		</p>
-		<p>
-			본인 확인 이메일<br> <input type="email" placeholder="선택입력" style="width: 300px; height: 50px;" >
-		</p>
-		<p>
-			휴대전화<br> <select style="width: 300px; height: 50px;" name="required">
+			</select> <input type="text" placeholder="일" id="day"
+				style="width: 90px; height: 50px;" name="day" required><br>
+				<span id="check5"></span><br>
+				
+		<h4>성별</h4><br> 
+        <select style="width: 300px; height: 50px;"
+				name="gender" required>
+				
+				<option value="M">남자</option>
+				<option value="W">여자</option>
+				<option value="no" selected>선택안함</option>
+			</select><br><br>
+			
+			
+		<h4>본인 확인 이메일 <small>(선택)</small></h4><br> 
+        <input type="email" placeholder="선택입력"
+				style="width: 300px; height: 50px;"><br><br>
+
+		<h4>휴대전화</h4><br> 
+        <select style="width: 100px; height: 50px;"
+				name="country" required>
 				<option value="233">가나 +233</option>
 				<option value="241">가봉 +241</option>
 				<option value="592">가이아나 +592</option>
@@ -310,16 +337,17 @@ button{
 				<option value="61">호주 +61</option>
 				<option value="852">홍콩 +852</option>
 			</select>
-		</p>
-		<p>
-		<input type="tel" pattern="[0-9]{8}" placeholder="전화번호 입력" style="width: 190px; height: 50px;" name="required" >
+		<span id="check6"></span>
 		
-            <button>인증번호 받기</button><br>
-            </p>
-            <p>
-            <input type="text" placeholder="인증번호 입력하세요" style="width: 300px; height: 50px;" name="required" ><br>
-            </p>
-            <input type="button" value="가입하기" onclick="check(form)">
+			<input type="tel" pattern="[0-9]{8}" placeholder="전화번호 입력(앞세글자 제외)"
+				style="width: 190px; height: 50px;" name="tel" required><br><br>
+		<input type="button" value="가입하기" onclick="check(form)" style="width: 300px; height: 50px;">
+	
+    </div>
 	</form>
+	<script>
+	
+	
+	</script>
 </body>
 </html>

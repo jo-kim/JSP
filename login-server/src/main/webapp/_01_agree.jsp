@@ -1,3 +1,4 @@
+
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <!DOCTYPE html>
@@ -6,7 +7,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-     
+     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
     <style>
     @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@500&display=swap');
        	h1{
@@ -47,7 +48,10 @@
         }
         
         #confirm{
-        	background-color: rgb(10, 187, 10)
+        	background-color: rgb(10, 187, 10);
+        }
+        .all{
+        	color:green;
         }
     </style>
    <script type="text/javascript" src="_02_validation.js"></script>
@@ -63,7 +67,8 @@
     <!-- -->
     
         <form action="_03_join.jsp" >
-            <h4><input type="checkbox" name="terms" id="check1" required>네이버 이용약관 동의 <span>(필수)</span></h4>
+        	<h4><input type="checkbox" class="all" id="check">네이버 이용약관, 개인정보 수집 및 이용, 위치정보 이용약관(선택), 프로모션 정보 수신(선택)에 모두 동의합니다.</h4><br>
+            <h4><input type="checkbox" name="required" id="check" required>네이버 이용약관 동의 <span>(필수)</span></h4>
             <textarea colspan="100" row="15" readonly> 여러분을 환영합니다.
 네이버 서비스 및 제품(이하 ‘서비스’)을 이용해 주셔서 감사합니다. 본 약관은 다양한 네이버 서비스의 이용과 관련하여 네이버 서비스를 제공하는 네이버 주식회사(이하 ‘네이버’)와 이를 이용하는 네이버 서비스 회원(이하 ‘회원’) 또는 비회원과의 관계를 설명하며, 아울러 여러분의 네이버 서비스 이용에 도움이 될 수 있는 유익한 정보를 포함하고 있습니다.
 
@@ -75,7 +80,7 @@
             </textarea>
             
 
-            <h4><input type="checkbox" name="terms" id="check2" required>개인정보 수집 밎 이용동의 <span>(필수)</span></h4>
+            <h4><input type="checkbox" name="required" id="check" required>개인정보 수집 밎 이용동의 <span>(필수)</span></h4>
             <textarea colspan="100" row="15" readonly>개인정보보호법에 따라 네이버에 회원가입 신청하시는 분께 수집하는 개인정보의 항목, 개인정보의 수집 및 이용목적, 개인정보의 보유 및 이용기간, 동의 거부권 및 동의 거부 시 불이익에 관한 사항을 안내 드리오니 자세히 읽은 후 동의하여 주시기 바랍니다.
 
                 1. 수집하는 개인정보
@@ -96,7 +101,7 @@
                 이와 같이 수집된 정보는 개인정보와의 연계 여부 등에 따라 개인정보에 해당할 수 있고, 개인정보에 해당하지 않을 수도 있습니다.
             </textarea>
 
-            <h4><input type="checkbox"  id="check3">위치정보 이용약관 동의 <span>(선택)</span></h4>
+            <h4><input type="checkbox"  id="check" name="option">위치정보 이용약관 동의 <span>(선택)</span></h4>
             <textarea colspan="100" row="15" readonly>위치정보 이용약관에 동의하시면, 위치를 활용한 광고 정보 수신 등을 포함하는 네이버 위치기반 서비스를 이용할 수 있습니다.
 
 
@@ -107,12 +112,18 @@
                 이 약관에 명시되지 않은 사항은 위치정보의 보호 및 이용 등에 관한 법률, 정보통신망 이용촉진 및 정보보호 등에 관한 법률, 전기통신기본법, 전기통신사업법 등 관계법령과 회사의 이용약관 및 개인정보처리방침, 회사가 별도로 정한 지침 등에 의합니다.</textarea>
            
 
-            <h4><input type="checkbox"   id="check4" >프로모션 정보 수신 동의 <span>(선택)</span></h4>
+            <h4><input type="checkbox"   id="check" name="option" >프로모션 정보 수신 동의 <span>(선택)</span></h4>
             <footer>네이버에서 제공하는 이벤트/혜택 등 다양한 정보를 휴대전화(네이버앱 알림 또는 문자), 이메일로 받아보실 수 있습니다. 일부 서비스(별도 회원 체계로 운영하거나 네이버 가입 이후 추가 가입하여 이용하는 서비스 등)의 경우, 개별 서비스에 대해 별도 수신 동의를 받을 수 있으며, 이때에도 수신 동의에 대해 별도로 안내하고 동의를 받습니다.</footer>
 
             <input type="button" value="취소" id="cancel">
             <input type="button" value="확인" id="confirm" onclick="checkValidate(form)">
         </form>
-   
+   <script>
+   	$('.all').click(e=>{
+   		$('input#check').prop('checked',$('.all').prop('checked'));
+   	});
+   	
+  
+   </script>
 </body>
 </html>
