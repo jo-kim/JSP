@@ -35,5 +35,5 @@ create table boards(
     date datetime not null default current_timestamp
 );
 
-
+select * from boards;
 
