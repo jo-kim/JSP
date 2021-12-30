@@ -31,7 +31,7 @@
       }
     
     </style>
-    <title>Document</title>
+    <title>Board Write</title>
 </head>
 <body>
 	<%

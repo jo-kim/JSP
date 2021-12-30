@@ -8,6 +8,9 @@
 <head>
 <meta charset="UTF-8">
 <style>
+#head{
+color: rgb(10, 187, 10);
+}
 input[type="submit"] {
 	width: 300px;
 	height: 50px;
@@ -18,8 +21,9 @@ input[type="submit"] {
 <title>Join Complete</title>
 </head>
 <body>
+	<div id="head">
 	<h1>NAVER</h1>
-	
+	</div>
 	<%
 		request.setCharacterEncoding("utf-8");
 	

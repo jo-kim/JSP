@@ -21,6 +21,12 @@
             border: solid 2px
             background-color: rgb(10, 187, 10); 
         }
+        
+        input[type="password"] {
+            padding: 10px;
+            border: solid 2px
+            background-color: rgb(10, 187, 10); 
+        }
 
         input[type="button"] {
         	width:200px;
@@ -43,7 +49,7 @@
 
     <form method="POST" action="_06_loginPro.jsp">
         <span>Id:&#9;</span><input type="text" name="id"><br><br>
-        <span>Pw:&#9;</span><input type="text" name="pw"><br><br>
+        <span>Pw:&#9;</span><input type="password" name="pw"><br><br>
         <input type="button" onclick="checkLogin(form)" value="login">
     </form>
     <script type="text/javascript" src="_02_validation.js"></script>

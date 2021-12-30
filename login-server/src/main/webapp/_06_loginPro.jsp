@@ -5,7 +5,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Insert title here</title>
+<title>Login Complete</title>
 </head>
 <body>
 
@@ -21,6 +21,7 @@
 		 response.sendRedirect("_10_boardList.jsp");
 	 }else{
 		 response.sendRedirect("_05_login.jsp");
+		 System.out.println("일치하지 않는 정보입니다.");
 	 }
     %>
 </body>

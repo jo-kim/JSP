@@ -41,6 +41,7 @@
         	font-size:1em;
         	border:0;
   			color:white;
+  			cursor:pointer;
         }
         
         #cancel{

@@ -5,7 +5,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Insert title here</title>
+<title>Board Delete</title>
 </head>
 <body>
 <h1>게시글 삭제하기</h1>

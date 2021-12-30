@@ -6,7 +6,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Insert title here</title>
+<title>Board Update Confirm</title>
 </head>
 <body>
 <h1>updatePro</h1>

@@ -10,15 +10,18 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <style>
+    button{
+    	cursor:pointer;
+    }
     header{
     	text-align: right;
-    	cursor:pointer;
+    	
     }
    div{
           margin-top: 1%;
           margin-right: 1%;
           text-align: right; 
-          cursor:pointer;
+         
       }
     </style>
     <title>Board List</title>

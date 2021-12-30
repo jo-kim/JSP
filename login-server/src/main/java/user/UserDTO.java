@@ -94,7 +94,7 @@ public class UserDTO {
 	@Override
 	public String toString() {
 		// TODO Auto-generated method stub
-		return String.format("%d) Id: %s / Pw: %s / Name: %s / Birth: %s-%s-%s / Gender: %s / Tel: %s (%s)", this.code, this.id, this.pw,this.name, this.year, this.month,this.day,this.gender,this.tel, this.regDate) ;
+		return String.format("%d) Id: %s / Pw: %s / Name: %s / Birth: %s-%s-%s / Gender: %s / Tel: 010) %s (%s)", this.code, this.id, this.pw,this.name, this.year, this.month,this.day,this.gender,this.tel, this.regDate) ;
 	}
 
 }
