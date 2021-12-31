@@ -10,6 +10,9 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <style>
+	button{
+		cursor:pointer;
+	}
 </style>
 <title>BoardView</title>
 </head>
@@ -68,7 +71,7 @@
 	<button id="updatebtn"
 		onclick="location.href='_13_boardUpdateForm.jsp?code=<%=code%>'">수정하기</button>
 	<button id="deletebtn"
-		onclick="location.href='_17_boardDeletePro.jsp?code=<%=code%>'">삭제하기</button>
+		onclick="location.href='_16_boardDelete.jsp?code=<%=code%>'">삭제하기</button>
 	<%
 	}
 	

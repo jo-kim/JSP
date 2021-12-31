@@ -50,7 +50,7 @@
     <form method="POST" action="_06_loginPro.jsp">
         <span>Id:&#9;</span><input type="text" name="id"><br><br>
         <span>Pw:&#9;</span><input type="password" name="pw"><br><br>
-        <input type="button" onclick="checkLogin(form)" value="login">
+        <input type="button" onclick="checkLogin(form)" value="Login">
     </form>
     <script type="text/javascript" src="_02_validation.js"></script>
 </body>

@@ -14,6 +14,7 @@
       input[type="text"]{
           border: none;
           font-size: 1em;
+          
       }
      textarea{
           border: none;
@@ -21,8 +22,10 @@
       }
       input[type="password"]{
           border: none;
-          font-size: 1em;
-          
+          font-size: 1em; 
+      }
+      input[type="button"]{
+      		cursor:pointer;
       }
       div{
           margin-top: 1%;

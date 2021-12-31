@@ -41,12 +41,12 @@
 	<!-- 메인메뉴 록아웃  -->
 	<table border="1px solid" style="width:100%">
 		<tr>
-			<td>no</td>
-			<td>title</td>
-			<td>id</td>
-			<td>view</td>
-			<td>like</td>
-			<td>date</td>
+			<td>No</td>
+			<td>Title</td>
+			<td>Id</td>
+			<td>View</td>
+			<td>Like</td>
+			<td>Date</td>
 		</tr>
 		
 		<%

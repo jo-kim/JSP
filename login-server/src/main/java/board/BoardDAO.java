@@ -18,7 +18,7 @@ public class BoardDAO {
 	}
 	
 	// 데이터베이스 연동 준비
-	
+	// time 
 	private Connection conn = null;
 	private PreparedStatement pstmt = null;
 	private ResultSet rs = null;
@@ -58,7 +58,7 @@ public class BoardDAO {
 		
 		try {
 			conn = DBManager.getConnection();
-		    String sql = "insert into boards(id,pw,title,content) values(?,?,?,?)";
+		    String sql = "insert into boards(id,pw,title,content,date) values(?,?,?,?,?)";
 			
 		    pstmt = conn.prepareStatement(sql);
 		    
@@ -66,8 +66,7 @@ public class BoardDAO {
 			pstmt.setString(2, board.getPw());
 			pstmt.setString(3, board.getTitle());
 			pstmt.setString(4, board.getContent());
-			
-			
+			pstmt.setTimestamp(5, new Timestamp(Calendar.getInstance().getTimeInMillis()));			
 			pstmt.executeUpdate();
 			System.out.println("등록하기완료");
 		} catch (Exception e) {
@@ -79,13 +78,13 @@ public class BoardDAO {
 		
 		try {
 			conn = DBManager.getConnection();
-			String sql = "update boards set title = ? , content = ? , pw = ? where code = '"+code+"' ";
+			String sql = "update boards set title = ? , content = ? , pw = ? , date = ? where code = '"+code+"' ";
 			pstmt = conn.prepareStatement(sql);
 			
 			pstmt.setString(1,board.getTitle());
 			pstmt.setString(2, board.getContent());
 			pstmt.setString(3, board.getPw());
-			
+			pstmt.setTimestamp(4, new Timestamp(Calendar.getInstance().getTimeInMillis()));	
 			pstmt.executeUpdate();
 			System.out.println("수정완료");
 		} catch (Exception e) {
